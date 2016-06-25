@@ -1,0 +1,68 @@
+body{
+    background-color:#222;
+    color:#FCF5E7;
+}
+.margin-240-top{
+    margin-top:240px;
+}
+#time{
+    font-size:4rem;
+}
+/*
+ * SEARCH FORM
+*/
+.searchForm i{
+    font-size:1.6rem;
+    cursor:pointer;
+    margin-right:5px;
+}
+.searchForm input{
+    font-size:1.1rem;
+    padding:.4rem;
+    border:none;
+    background:#404040;
+    color:#FCF5E7;
+}
+/*
+ * SEARCH ENGINE LIST
+*/
+#searchEngineList{
+    width:60%;
+    padding:15px;
+    list-style-type:none;
+    background:rgba(64,64,64,0.5);
+    -moz-columns:2;
+    -moz-column-rule-style:solid;
+}
+#searchEngineList li{
+    margin:5px 0;
+}
+#searchEngineList li a{
+    font-weight:normal;
+}
+footer{
+    position:fixed;
+    left:0;
+    bottom:0;
+}
+/*
+ * BOOKMARKS LIST
+*/
+#bookmarks{
+}
+#bookmarks ul{
+    list-style-type:none;
+    float:left;
+}
+#bookmarks ul li:first-of-type{
+    text-decoration:underline;
+}
+#bookmarks ul li{
+    padding:5px 0;
+}
+#bookmarks ul li a{
+    font-weight:normal;
+}
+#bookmarks ul li a:hover{
+    text-shadow: 1px 0 #FCF5E7;
+}

@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Home Page</title>
+        <meta name="viewport" content="width-device-width", initial-scale=1>
+
+        <link rel="stylesheet" href="public/css/main.css">
+        <link rel="stylesheet" href="public/css/site.css">
+        <link rel="stylesheet" href="public/font-awesome-4.5.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <main>
+            <div class="row">
+                <div class="col">
+                    <div class="w-60 margin-center text-center margin-240-top">
+                        <h1 id="time"></h1>
+                        <form name="searchForm" class="searchForm" method="GET"  action="javascript:searchForm()">
+                            <p>
+                                <i id="list-search" class="fa fa-question-circle"></i>
+                                <input class="searchInput" type="text" name="q" placeholder="tag:query" autofocus>
+                            </p>
+                        </form>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="w-60 margin-center text-center">
+                            <ul id="searchEngineList" class="margin-center hide"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer class="row">
+            <div id="bookmarks" class="col wrap-15"></div>
+        </footer>
+        <script type="text/javascript" src="public/js/lists.js"></script>
+        <script type="text/javascript" src="public/js/firefoxabout.js"></script>
+        <script type="text/javascript" src="public/js/site.js"></script>
+    </body>
+</html>
