@@ -2,11 +2,11 @@
  * TIME AND DATE
  */
 function getTime(){
-    var currentTime = new Date();
-    var hour    = currentTime.getHours();
-    var min     = currentTime.getMinutes();
-    var sec     = currentTime.getSeconds();
-    var time    = ((hour < 10) ? "0" : "") + hour;
+    let currentTime = new Date();
+    let hour    = currentTime.getHours();
+    let min     = currentTime.getMinutes();
+    let sec     = currentTime.getSeconds();
+    let time    = ((hour < 10) ? "0" : "") + hour;
     time += ((min < 10) ? ":0" : ":") + min;
     time += ((sec < 10) ? ":0" : ":") + sec;
 
@@ -16,14 +16,14 @@ function getTime(){
  * SEARCH BOX
  */
 function searchForm(){
-    var query = document.searchForm.q.value.split(":");
+    const query = document.searchForm.q.value.split(":");
 
     if(isQuery(query[0])){
         // check if is just search term or local address
         if(query.length == 1 || isLocalHost(query[0])){
             // local url
             if(isLocalHost(query[0])){
-                var url = "http://" + query[0];
+                let url = "http://" + query[0];
 
                 // check for port on local url
                 if(query[1]){
@@ -33,11 +33,11 @@ function searchForm(){
                 return;
             }
             // search engine url
-            for(var i=0; i<searchKeys.length; ++i){
+            for(let i=0; i<searchKeys.length; ++i){
                 if(query[0] == searchEngines[searchKeys[i]][0].tag ||
                         query[0].toLowerCase() == searchKeys[i].toLowerCase()){
 
-                    var url = document.createElement("a");
+                    let url = document.createElement("a");
                     url.href = searchEngines[searchKeys[i]][0].url;
 
                     window.location = url.protocol + "//" + url.host;
@@ -55,9 +55,9 @@ function searchForm(){
             if(query.length == 2){
                 // check if firefox about page
                 if(query[0] == "about"){
-                    var ffQuery = query[0] + ":" + query[1];
+                    let ffQuery = query[0] + ":" + query[1];
                     if(ffAboutPage.indexOf(ffQuery) > -1){
-                        alert("Firefox about pages can only be accessed directly from the url bar.");
+                        window.alert("Firefox about pages can only be accessed directly from the url bar.");
                         return;
                     }
                 }
@@ -68,7 +68,7 @@ function searchForm(){
                 }
             }
             // iterate through searchEngines and check for correct site tag
-            for(var i=0; i<searchKeys.length; i++){
+            for(let i=0; i<searchKeys.length; i++){
                 if(query[0] == searchEngines[searchKeys[i]][0].tag ||
                         query[0].toLowerCase() == searchKeys[i].toLowerCase()){
                     // rebuild query is needed
@@ -93,7 +93,7 @@ function searchForm(){
         if(q.indexOf(".") == -1){
             return false;
         }
-        var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+        let pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
                 '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
                 '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
                 '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
@@ -111,7 +111,7 @@ function searchForm(){
     }
     // search with default engine
     function defaultSearch(q){
-        for(var i=0; i<searchKeys.length; i++){
+        for(let i=0; i<searchKeys.length; i++){
             if(searchEngines[searchKeys[i]][0].default == "true"){
                 // rebuild query if needed
                 if(query.length > 1){
@@ -121,17 +121,17 @@ function searchForm(){
                 return;
             }
         }
-        alert("ERROR: No default search engine set.\nPlease edit public/js/lists.js to set.");
+        window.alert("ERROR: No default search engine set.\nPlease edit public/js/lists.js to set.");
     }
     // if query.length > 2 mean there are : character's in search string
     // build a new query from query components, replace : chars and rebuild
     // query
     function rebuildSearchQuery(defaultSearch = false){
-        var tmp = "";
-        var separator = ":";
-        var sArr = [];
+        let tmp = "";
+        let separator = ":";
+        let sArr = [];
 
-        for(var i=query.length -1; i>=1; i--){
+        for(let i=query.length -1; i>=1; i--){
             sArr[i] = (i > 1) ? (separator + query[i]) : query[i];
             query.pop();
         }
@@ -148,13 +148,13 @@ function searchForm(){
 }
 // create search engine list
 function populateSearchList(){
-    var list = document.getElementById("searchEngineList");
+    let list = document.getElementById("searchEngineList");
 
     // iterate over list and add names to list
-    for(var i=0; i<searchKeys.length; i++){
-        var linode = document.createElement("LI");
-        var anode = document.createElement("A");
-        var textnode = document.createTextNode(searchKeys[i]);
+    for(let i=0; i<searchKeys.length; i++){
+        let linode = document.createElement("LI");
+        let anode = document.createElement("A");
+        let textnode = document.createTextNode(searchKeys[i]);
 
         anode.appendChild(textnode);
         linode.appendChild(anode);
@@ -166,7 +166,7 @@ function populateSearchList(){
  */
 // show or hide search engine list from button
 document.getElementById("list-search").addEventListener("click", function(e){
-    var searchEngineList = document.getElementById("searchEngineList");
+    let searchEngineList = document.getElementById("searchEngineList");
 
     if(searchEngineList.classList.contains("hide")){
         showHideList("show");
@@ -175,7 +175,7 @@ document.getElementById("list-search").addEventListener("click", function(e){
     }
 });
 function showHideList(action){
-    var searchEngineList = document.getElementById("searchEngineList");
+    let searchEngineList = document.getElementById("searchEngineList");
     if(action == "show"){
         searchEngineList.classList.remove("hide");
         searchEngineList.classList.add("show");
@@ -212,20 +212,20 @@ document.getElementById("searchEngineList").addEventListener("mouseleave", funct
  */
 // create the lists
 function populateBookmarkList(){
-    var container = document.getElementById("bookmarks");
+    let container = document.getElementById("bookmarks");
 
     // iterate over list and add items as list to container
-    for(var i=0; i<bookmarkkeys.length; i++){
-        var ulnode = document.createElement("UL");
-        var linode = document.createElement("LI");
-        var textnode = document.createTextNode(bookmarkkeys[i]);
+    for(let i=0; i<bookmarkkeys.length; i++){
+        let ulnode = document.createElement("UL");
+        let linode = document.createElement("LI");
+        let textnode = document.createTextNode(bookmarkkeys[i]);
 
         linode.appendChild(textnode);
         ulnode.appendChild(linode);
 
-        for(var j=0; j<bookmarks[bookmarkkeys[i]].length; j++){
+        for(let j=0; j<bookmarks[bookmarkkeys[i]].length; j++){
             linode = document.createElement("LI");
-            var anode = document.createElement("A");
+            let anode = document.createElement("A");
             anode.setAttribute("href", bookmarks[bookmarkkeys[i]][j].url);
             textnode = document.createTextNode(bookmarks[bookmarkkeys[i]][j].sitename);
 
@@ -239,6 +239,5 @@ function populateBookmarkList(){
 
 populateSearchList();
 populateBookmarkList();
-// get time once so as to avoid 1s delay
-getTime();
+getTime();  // initial get time to avoid 1s delay
 setInterval(getTime, 1000);

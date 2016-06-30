@@ -1,7 +1,7 @@
 /*
  * SEARCH ENGINES
 */
-var searchEngines = {
+const searchEngines = {
     "Google" : [
     {"tag": "google",   "url": "https://www.google.com/search?q=",  "default": "true"}
     ],
@@ -48,7 +48,7 @@ var searchEngines = {
 /*
  * BOOKMARKED SITES
 */
-var bookmarks = {
+const bookmarks = {
     "Torrents" : [
     {"sitename": "RARBG",               "url": "https://rarbg.to"},
     {"sitename": "The Pirate Bay",      "url": "https://thepiratebay.se"},
@@ -79,5 +79,5 @@ var bookmarks = {
  * DO NOT REMOVE OR EDIT THESE LINES
  * Unless you want to break everything.
  */
-var searchKeys = Object.keys(searchEngines);
-var bookmarkkeys = Object.keys(bookmarks);
+const searchKeys = Object.keys(searchEngines);
+const bookmarkkeys = Object.keys(bookmarks);
