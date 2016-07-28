@@ -10,7 +10,7 @@ class Search{
         this.processQuery();
     }
     processQuery(){
-        if(this.isQuery(this.query[0]) && !this.checkLocalHost(this.query)){
+        if(!this.checkLocalHost(this.query) && this.isQuery(this.query[0])){
             // check if this.query is just a search term
             if(this.query.length == 1){
                 // search engine homepage - strip search this.query from url
@@ -86,7 +86,7 @@ class Search{
     // check if query is 192.168.x.x
     // TODO: Add other local IP addresses
     checkLocalHost(){
-        if(this.query[0].indexOf("192.") > -1){
+        if(this.query[0].indexOf("192.") > -1 || this.query[0].indexOf("localhost") > -1){
             let url = this.PROTOEXT + this.query[0];
 
             if(this.query[1]){

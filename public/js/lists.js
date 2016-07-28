@@ -67,7 +67,8 @@ const bookmarks = {
     {"sitename": "Khan Academy",        "url": "https://www.khanacademy.org"},
     {"sitename": "WikiBooks Algorithms","url": "https://en.wikibooks.org/wiki/Algorithm_Implementation"},
     {"sitename": "Geeks For Geeks",     "url": "http://www.geeksforgeeks.org"},
-    {"sitename": "Cpp Reference",       "url": "http://en.cppreference.com"}
+    {"sitename": "Cpp Reference",       "url": "http://en.cppreference.com"},
+    {"sitename": "DevDocs",             "url": "https://devdocs.io"}
     ],
     "Social Media" : [
     {"sitename": "Facebook",            "url": "https://www.facebook.com"},
