@@ -5,7 +5,12 @@ class Search{
         this.PROTOINT = "file";        // internal protocol
         this.SEPARATOR = ':';
 
-        this.query = document.searchForm.q.value.split(this.SEPARATOR);
+        // ensure queries containing protocols aren't split
+        if(document.searchForm.q.value.indexOf(this.PROTOEXT) == -1){
+            this.query = document.searchForm.q.value.split(this.SEPARATOR);
+        }else{
+            this.query = [document.searchForm.q.value];
+        }
 
         this.processQuery();
     }
@@ -27,7 +32,11 @@ class Search{
                 }
                 // external url
                 if(this.isURL(this.query[0])){
-                    window.location = this.PROTOEXT + this.query[0];
+                    if(this.query[0].indexOf(this.PROTOEXT) == -1){
+                        window.location = this.PROTOEXT + this.query[0];
+                    }else{
+                        window.location = this.query[0];
+                    }
                     return
                 }
                 this.defaultSearch(this.query[0]);
