@@ -11,7 +11,7 @@ body{
 /*
  * SEARCH FORM
 */
-.searchForm i{
+.searchForm span{
     font-size:1.6rem;
     cursor:pointer;
     margin-right:5px;

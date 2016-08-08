@@ -43,6 +43,9 @@ const searchEngines = {
     ],
     "Cpp Reference": [
     {"tag": "cpp",      "url": "http://en.cppreference.com/mwiki/index.php?search=", "default": "false"}
+    ],
+    "WineHQ": [
+    {"tag": "whq",      "url": "https://www.winehq.org/search?q=", "default": "false"}
     ]
 };
 /*
