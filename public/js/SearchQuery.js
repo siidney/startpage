@@ -45,7 +45,7 @@ class Search{
                             this.query[0].toLowerCase() == searchKeys[i].toLowerCase()){
                         // rebuild this.query is needed
                         if(this.query.length > 2){
-                            this.query = rebuildSearchQuery();
+                            this.query = this.rebuildSearchQuery();
                         }
                         window.location = searchEngines[searchKeys[i]][0].url + encodeURIComponent(this.query[1]);
                         return;
