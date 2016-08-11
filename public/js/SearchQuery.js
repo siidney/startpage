@@ -1,21 +1,27 @@
 // Handles the search query
 class Search{
     constructor(){
-        this.PROTOEXT = "http://";     // external protocol
-        this.PROTOINT = "file";        // internal protocol
         this.SEPARATOR = ':';
 
-        // ensure queries containing protocols aren't split
-        if(document.searchForm.q.value.indexOf(this.PROTOEXT) == -1){
+        // check for empty string
+        // alert of ff about page
+        // redirect to addresses
+        if(this.isQuery(searchForm.q.value)){
+            if(ffAboutPage.indexOf(document.searchForm.q.value) > -1){
+                window.alert("Firefox about pages can only be accessed directly from the url bar.");
+                return;
+            }
+            if(this.isURL(document.searchForm.q.value)){
+                window.location = document.searchForm.q.value;
+                return;
+            }
             this.query = document.searchForm.q.value.split(this.SEPARATOR);
-        }else{
-            this.query = [document.searchForm.q.value];
-        }
 
-        this.processQuery();
+            this.processQuery();
+        }
     }
     processQuery(){
-        if(!this.checkLocalHost(this.query) && this.isQuery(this.query[0])){
+        if(!this.checkLocalHost(this.query)){
             // check if this.query is just a search term
             if(this.query.length == 1){
                 // search engine homepage - strip search this.query from url
@@ -30,33 +36,9 @@ class Search{
                         return;
                     }
                 }
-                // external url
-                if(this.isURL(this.query[0])){
-                    if(this.query[0].indexOf(this.PROTOEXT) == -1){
-                        window.location = this.PROTOEXT + this.query[0];
-                    }else{
-                        window.location = this.query[0];
-                    }
-                    return
-                }
                 this.defaultSearch(this.query[0]);
             // search array for engine and redirect to url
             }else{
-                if(this.query.length == 2){
-                    // check if firefox about page
-                    if(this.query[0] == "about"){
-                        let ffQuery = this.query[0] + this.SEPARATOR + this.query[1];
-                        if(ffAboutPage.indexOf(ffQuery) > -1){
-                            window.alert("Firefox about pages can only be accessed directly from the url bar.");
-                            return;
-                        }
-                    }
-                    // local file system
-                    if(this.query[0] == this.PROTOINT){
-                        window.location = this.query[0] + this.SEPARATOR + this.query[1];
-                        return;
-                    }
-                }
                 // iterate through searchEngines and check for correct site tag
                 for(let i=0; i<searchKeys.length; i++){
                     if(this.query[0] == searchEngines[searchKeys[i]][0].tag ||
@@ -79,24 +61,22 @@ class Search{
     isQuery(q){
         return (q && (/\S/.test(q) && q.length > 0));
     }
-    // check if string is valid url
+    // check if string is url
     isURL(q){
-        if(q.indexOf(".") == -1){
-            return false;
+        if(q.indexOf("://") > -1){
+            for(let i=0; i<protocols.length; ++i){
+                if(q.indexOf(protocols[i]) > -1){
+                    return true;
+                }
+            };
         }
-        let pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-                '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
-                '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-                '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-                '(\\?[;&a-z\\d%_.~+=-]*)?'+ // this.query string
-                '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
-        return pattern.test(q);
+        return false;
     }
     // check if query is 192.168.x.x
     // TODO: Add other local IP addresses
     checkLocalHost(){
         if(this.query[0].indexOf("192.") > -1 || this.query[0].indexOf("localhost") > -1){
-            let url = this.PROTOEXT + this.query[0];
+            let url = protocols[0] + this.query[0];
 
             if(this.query[1]){
                 url += this.SEPARATOR + this.query[1];

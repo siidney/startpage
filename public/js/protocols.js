@@ -1,7 +1,7 @@
 /*
  * DO NOT REMOVE OR EDIT THE FOLLOWING
  * Unless you don't care about knowing why the search does nothing when you try
- * and access Firefox config pages.
+ * and access Firefox config pages or want to be able to access complete urls.
  */
 /*
  * LIST OF FIREFOX ABOUT: PAGES
@@ -52,4 +52,14 @@ var ffAboutPage = [
     "about:neterror",
     "about:socialerror",
     "about:tabcrashed"
+];
+/*
+ * LIST OF PROTOCOLS
+ */
+var protocols = [
+    "http://",
+    "https://",
+    "ftp://",
+    "sftp://",
+    "file://"
 ];
