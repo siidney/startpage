@@ -12,9 +12,9 @@ class Search{
                 return;
             }
             if(this.isURL(document.searchForm.q.value)){
-                window.location = document.searchForm.q.value;
                 return;
             }
+
             this.query = document.searchForm.q.value.split(this.SEPARATOR);
 
             this.processQuery();
@@ -63,12 +63,25 @@ class Search{
     }
     // check if string is url
     isURL(q){
-        if(q.indexOf("://") > -1){
+        if(q.indexOf("://") > -1 && q.indexOf("://") < 8){
             for(let i=0; i<protocols.length; ++i){
                 if(q.indexOf(protocols[i]) > -1){
+                    window.location = q;
                     return true;
                 }
             };
+        }
+        if(q.indexOf(".") >-1){
+            let pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+                    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
+                    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+                    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+                    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // this.query string
+                    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+            if(pattern.test(q)){
+                window.location = protocols[0] + q;
+                return true;
+            }
         }
         return false;
     }

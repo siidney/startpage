@@ -1,4 +1,4 @@
-# Custom Start Page 1.0.2b
+# Custom Start Page 1.0.2b2
 
 A custom start page made primarily for Firefox.
 
