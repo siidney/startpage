@@ -46,6 +46,9 @@ const searchEngines = {
     ],
     "WineHQ": [
     {"tag": "whq",      "url": "https://www.winehq.org/search?q=", "default": "false"}
+    ],
+    "Imgur": [
+    {"tag": "img",      "url": "https://imgur.com/search?q=", "default": "false"}
     ]
 };
 /*
@@ -75,7 +78,8 @@ const bookmarks = {
     ],
     "Social Media" : [
     {"sitename": "Facebook",            "url": "https://www.facebook.com"},
-    {"sitename": "Reddit",              "url": "https://www.reddit.com"}
+    {"sitename": "Reddit",              "url": "https://www.reddit.com"},
+    {"sitename": "Pinterest",           "url": "https://www.pinterest.com"}
     ]
 };
 

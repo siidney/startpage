@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>StartPage</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width-device-width, initial-scale=1.0"/>
+
+        <link rel="stylesheet" href="public/font-awesome-4.6.3/css/font-awesome.min.css">
+    </head>
+            <!--
+                The following are the most basic elements for getting this
+                start page to work as intended.
+                Use it as a base for creating custom styles.
+            -->
+    <body>
+        <main>
+            <!-- an element with id="bookmarks" to display the user defined
+                bookmarks -->
+            <nav id="bookmarks"></nav>
+
+            <!-- an element with an id="time" for the clock -->
+            <h1 id="time"></h1>
+
+            <!-- the most important element in the startpage is the form.
+                This performs the core functionality -->
+            <form name="searchForm" class="searchForm" method="GET" action="javascript:runQuery()">
+                <!-- an element with id="list-search" shows/hides the list of
+                    user generated search engines -->
+                    <span id="list-search" class="fa fa-question-circle"></span>
+                    <!-- The following search input should be used 'as is' to
+                        ensure correct functionality -->
+                    <input class="searchInput" type="text" name="q" placeholder="tag:query" autofocus>
+            </form>
+
+            <!-- an ul with class="hide" is necessary for the hiding/showing of
+                the user defined search engine list.
+                In order for the list to be initially hidden this should be
+                defined in your custom css file -->
+            <ul id="searchEngineList" class="hide"></ul>
+        </main>
+        <!-- the following are required in this exact order -->
+        <script type="text/javascript" src="public/js/lists.js"></script>
+        <script type="text/javascript" src="public/js/protocols.js"></script>
+        <script type="text/javascript" src="public/js/SearchQuery.js"></script>
+        <script type="text/javascript" src="public/js/startpage.js"></script>
+    </body>
+</html>

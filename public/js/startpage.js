@@ -52,9 +52,11 @@ function showHideList(action){
     if(action == "show"){
         searchEngineList.classList.remove("hide");
         searchEngineList.classList.add("show");
+        searchEngineList.style.display = "block";
     }else{
         searchEngineList.classList.remove("show");
         searchEngineList.classList.add("hide");
+        searchEngineList.style.display = "none";
     }
 }
 /*
@@ -72,6 +74,7 @@ function populateBookmarkList(){
 
         linode.appendChild(textnode);
         ulnode.appendChild(linode);
+        ulnode.setAttribute("id", bookmarkkeys[i].substr(0,3));
 
         for(let j=0; j<bookmarks[bookmarkkeys[i]].length; j++){
             linode = document.createElement("LI");

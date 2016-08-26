@@ -1,73 +1,64 @@
-# Custom Start Page 1.0.2b2
+# Custom Start Page 1.1.0
 
 A custom start page made primarily for Firefox.
 
 Everything is dynamically generated from the [lists.js](https://github.com/siidney/startpage/blob/master/public/js/lists.js) file. Unless of course you
 wish to change the theme/layout.
 
-The theme/layout can easily be changed without affecting the functionality by
-simply keeping the provided named html elements. However, their locations, size,
-colours etc are all fully customisable.
+## Themes
 
-## Default View
+Some premade themes are located [here](https://github.com/siidney/startpage/blob/master/public/themes/).
+At least they will be as and when they are completed.
 
-The exciting default view shows the search bar, clock and list of bookmarks.
+The theme/layout can easily be customised without affecting the core functionality by
+simply using the [skel](https://github.com/siidney/startpage/blob/master/public/themes/skel) theme as a base.
 
-![Screenshot0](/public/img/screenshots/2016-03-31-091905_1920x1080_scrot.png?raw=true "Default view")
+It is fully documented and quite easy to understand.
 
-## Bookmarks Highlight
+## Details
 
-Text effect on bookmarks rollover. Now we're getting exciting.
+This startpage is built of 3 key and one optional components, along with 4
+scripts:
 
-![Screenshot1](/public/img/screenshots/2016-03-31-092507_1920x1080_scrot.png?raw=true "Bookmarks highlight")
+1. A list of user defined bookmarks. There are no limits upon the number of
+   individual lists or organisation.
+  - Bookmarks are user defined and auto generated from [lists.js](https://github.com/siidney/startpage/blob/master/public/js/lists.js).
+  - Here's a short, silent and sweet screencast showcasing the awesomeness of it
+    all: [Adding Bookmarks Screencast One](https://vid.me/MjdB) - *external link*
 
-## Search Bar
+2. Just a clock.
+  - This is not a requirement if the clock is not wanted.
+  - Always nice to know the time though.
 
-Having difficulty remembering the tag for your desired search. Never fear, with
-this handy drop down you can get a dynamic list of all your configured search
-engines.
-
-![Screenshot2](/public/img/screenshots/2016-04-01-152020_1920x1080_scrot.png?raw=true "Search Engines DropDown")
-
-You can even roll-over the entries and the search box will automatically show you
-the correct tag.
-
-![Screenshot3](/public/img/screenshots/2016-04-01-135649_1920x1080_scrot.png?raw=true "Search Engines DropDown with tags")
-
-Find the one you want and click on it to be taken to search box
-and access the knowledge of the world.
-
-If you don't specify a search tag not to worry as it will fallback to a default
-user configurable search engine *see below*.
-
-- The search box can recognise the site name you configured if you don't want to
-remember the tag; *and* it's case insensitive.
-
-- The search box will also take you to the homepage of a configured
-search engine using just the tag or sitename. No need to enter the full url.
-
-- The search bar can recognise local (192.x.x) and filesystem urls (file:///xxx).
-
-![Screenshot4](/public/img/screenshots/2016-04-01-140601_1920x1080_scrot.png?raw=true "Search Box Site Name")
-
-The search box can even recognise urls so rather than searching for the url it
-will take you directly to the site.
-
-![Screenshot5](/public/img/screenshots/2016-04-01-153146_1920x1080_scrot.png?raw=true "Search Box URL")
-
-The search strings will be fully url encoded *AND* if you need to search for
+3. The most important element in the startpage is the form. This performs the
+   core functionality.
+  - Everything is taken from the user defined searchEngines from [lists.js](https://github.com/siidney/startpage/blob/master/public/js/lists.js).
+  - *tags* are the shortform to access the required search.
+  - *url* is the search url (rip this from the site by performing a dummy search)
+  - *default* specifies whether or not this is the default search engine if no
+    tag was specified in the query.
+  - The search form can also:
+    - Goto the home page of a configured search engine using the tag or site
+      name. *case insensitive*
+    - Recognise local (192.x.x) and filesystem urls (file:///xxx).
+  - The search strings will be fully url encoded *AND* if you need to search for
 something using the *:* delimiter you can rest easy in the knowledge that your
 query will be sent as you intended.
 
-![Screenshot6](/public/img/screenshots/2016-04-01-135222_1920x1080_scrot.png?raw=true "Search Box Tomfoolery")
+4. The search form also contains a hidden (by default) list of user defined tags
+   so no worries if your memory isn't too good.
+  - The entries will auto complete in the search box on rollover.
+  - Here's a short, silent, sexy screencast showcasing the awesomeness of
+    adding your own search engines: [Adding SearchEngines Screencast One](https://vid.me/hMTb) - *external link*
 
-## Configuring Bookmarks and Search Engines
+5. The scripts.
+  - Javascript is not my fortè so the fact this actually works as well as it
+    does is miraculous.
 
-Search engine and bookmark preferences are easily customisable and updateable.
-All you need to do is edit [lists.js](https://github.com/siidney/startpage/blob/master/public/js/lists.js) to include *your* favourite site or search engine.
+## Sexy Silent ScreenCasts *external links*
+[Functionality With ThemeOne](https://vid.me/KPQH)
 
-Search engines are stored for your convenience and include custom tags, a title
-for the link and an easy way to specify a default search.
+[Functionality With Basic](https://vid.me/WBBO)
 
 ## Known Issues
 
