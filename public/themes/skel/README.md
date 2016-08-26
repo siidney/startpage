@@ -35,4 +35,5 @@ The search engines and bookmarks are automatically generated from the user so
 all that needs doing is making it look as fantastic as it performs ;)
 
 ## No Theme with all required elements
-![Screenshot1](/screenshots/2016-08-26-015846_1920x1080_scrot.png?raw=true "No Theming")
+![Screenshot1](https://github.com/siidney/startpage/blob/master/public/themes/skel/screenshots/2016-08-26-015846_1920x1080_scrot.png "No Theming")
+
