@@ -78,8 +78,7 @@ const bookmarks = {
     ],
     "Social Media" : [
     {"sitename": "Facebook",            "url": "https://www.facebook.com"},
-    {"sitename": "Reddit",              "url": "https://www.reddit.com"},
-    {"sitename": "Pinterest",           "url": "https://www.pinterest.com"}
+    {"sitename": "Reddit",              "url": "https://www.reddit.com"}
     ]
 };
 

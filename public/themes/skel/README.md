@@ -36,4 +36,3 @@ all that needs doing is making it look as fantastic as it performs ;)
 
 ## No Theme with all required elements
 ![Screenshot1](https://github.com/siidney/startpage/blob/master/public/themes/skel/screenshots/2016-08-26-015846_1920x1080_scrot.png "No Theming")
-

@@ -56,6 +56,8 @@ query will be sent as you intended.
     does is miraculous.
 
 ## Sexy Silent ScreenCasts *external links*
+[Functionality with ThemeTwo](https://vid.me/vrz8)
+
 [Functionality With ThemeOne](https://vid.me/KPQH)
 
 [Functionality With Basic](https://vid.me/WBBO)
