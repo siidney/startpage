@@ -2,7 +2,7 @@
 
 The next theme in the start page theming example series.
 
-![screenshot1](https://github.com/siidney/blob/master/public/themes/themetwo/screenshots/2016-08-29-001346_1920x1080_scrot.png "ThemeTwo")
+![screenshot1](https://github.com/siidney/startpage/blob/master/public/themes/themetwo/screenshots/2016-08-29-001346_1920x1080_scrot.png "ThemeTwo")
 
 It's simple, it's basic and it's totally different from the default and themeone
 themes to showcase just what can be done with this startpage.

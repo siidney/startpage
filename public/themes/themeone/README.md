@@ -1,6 +1,6 @@
 # ThemeOne
 
-![screenshot1](https://github.com/siidney/blob/master/public/themes/themetwo/screenshots/2016-08-29-003611_1920x1080_scrot.png "ThemeOne")
+![screenshot1](https://github.com/siidney/startpage/blob/master/public/themes/themeone/screenshots/2016-08-29-003611_1920x1080_scrot.png "ThemeOne")
 
 What follows is the first of many themes. Well, as many as I can be bothered to
 make anyway.
