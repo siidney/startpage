@@ -17,7 +17,9 @@
     #GLOBAL-STYLES
 \*------------------------------------*/
 
-        body{font-size:100%; min-height:100%;margin:0;padding:0;overflow:hidden;}
+        html{box-sizing:border-box;}
+        *, *:before, *:after{box-sizing:inherit;}
+        body{font-size:100%;min-height:100%;margin:0;padding:0;}
 	.show{display:block;}
 	.hide{display:none;}
 	.mob-show{display:none;}
@@ -44,8 +46,8 @@
 *	#BASE-GRID
 */
 
-	.row{clear:both;overflow:hidden;box-sizing:border-box;}
-	.row-noover{clear:both;overflow:visible;box-sizing:border-box;}
+	.row{clear:both;overflow:hidden;}
+	.row-noover{clear:both;overflow:visible;}
 
 	/* Row/Col wrap padding */
 	.wrap-15{padding-top:15px !important;padding-bottom:15px !important;overflow:hidden;}
@@ -71,8 +73,8 @@
         .wrap-240-top{padding-top:240px !important;overflow:hidden;}
 	.wrap-360{padding-top:360px !important;padding-bottom:360px !important;overflow:hidden;}
 
-	.col{padding:0 15px;box-sizing:border-box;}
-        .col-30{padding:0 30px;box-sizing:border-box;}
+	.col{padding:0 15px;}
+        .col-30{padding:0 30px;}
 /*
 *	#ERRORS
 */

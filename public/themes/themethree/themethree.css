@@ -1,0 +1,168 @@
+/*
+ * THEMETHREE
+ *
+ * Stylesheet
+ *
+ * Basic Flat Design
+ *
+ * form styles courtesy of
+ *      http://callmenick.com/post/various-css-input-text-styles
+ *
+ *
+ */
+/*
+ * GLOBAL STYLES
+ */
+/* blue */
+.bg-1{
+    background-color:#2CBAE7;
+}
+/* purple */
+.bg-2{
+    background-color:#9D7DA0;
+}
+/* grey */
+.bg-3{
+    background-color:#606C68;
+}
+/* white */
+.color-1{
+    color:#FFF;
+}
+/* blue */
+.color-2{
+    color:#2CBAE7;
+}
+/* purple */
+.color-3{
+    color:#9D7DA0;
+}
+/* grey */
+.color-4{
+    color:#606C68;
+}
+/* green */
+.color-5{
+    color:#0CD59C;
+}
+.icon1{
+    font-size:6rem;
+}
+ul{
+    padding:0;
+    margin:0;
+    list-style-type:none;
+}
+/*
+ * FORM/CLOCK
+ */
+#time{
+    text-shadow: 3px 3px 1px #000,
+                 -3px -3px 1px #000,
+                 -3px 3px 1px #000,
+                 3px -3px 1px #000;
+    font-size:3rem;
+}
+.searchForm span{
+    text-shadow: 1px 1px 1px #000,
+                 -1px -1px 1px #000,
+                 -1px 1px 1px #000,
+                 1px -1px 1px #000;
+}
+.searchForm input[type="text"]{
+    display:block;
+    margin:0 auto;
+    width:50%;
+    font-family:sans-serif;
+    font-size:1.2em;
+    appearance:none;
+    box-shadow:none;
+    border-radius:none;
+    box-sizing:border-box;
+    transition:all .7s;
+}
+.searchForm input[type="text"]:focus{
+    outline:none;
+    width:100%;
+}
+.searchForm span:hover{
+    cursor:pointer;
+}
+.style2 input[type="text"]{
+    padding:10px;
+    border:5px solid #000;
+    border-radius:15px;
+}
+#searchEngineList{
+    margin:0 auto;
+    color:#000;
+    padding:15px;
+    position:absolute;
+    left:25%;
+    right:25%;
+    font-size:1.1rem;
+    background-color:#fff;
+    border:5px solid #000;
+    border-radius:15px;
+    -moz-column-count:2;
+    -moz-column-rule-style:solid;
+}
+#searchEngineList li{
+    margin:5px 0;
+}
+#searchEngineList li a{
+    font-weight:normal;
+}
+/*
+ * HEADER
+ */
+#page-nav{
+    padding-top:50px;
+}
+#inspiration{
+    padding-top:100px;
+}
+#page-nav ul li:first-of-type{
+    border-right:3px solid #e5e5e5;
+}
+#page-nav ul:last-of-type li{
+    border-top:3px solid #e5e5e5;
+}
+#page-nav ul li{
+    display:inline-block;
+}
+#page-nav ul li a{
+    display:block;
+    padding:20px 40px;
+    color:#000;
+    transition:all .7s;
+}
+#page-nav ul li a:hover{
+    color:#fff;
+}
+#inspiration{
+    padding-bottom:100px;
+    font-size:2rem;
+}
+/*
+ * MAIN
+ */
+main .row{
+    padding:100px 0;
+}
+main .row a{
+    font-size:2rem;
+    transition:all .7s;
+}
+main .row ul li:first-of-type{
+    font-size:3rem;
+    text-decoration:underline;
+}
+main .row ul li{
+    font-size:1.2rem;
+    padding:15px 0;
+    transition:all .7s;
+}
+main a:hover, main ul li:not(:first-of-type):hover{
+    opacity:.6;
+}

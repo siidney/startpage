@@ -1,16 +1,20 @@
 /*
  * TIME AND DATE
  */
-function getTime(){
-    let currentTime = new Date();
-    let hour    = currentTime.getHours();
-    let min     = currentTime.getMinutes();
-    let sec     = currentTime.getSeconds();
-    let time    = ((hour < 10) ? "0" : "") + hour;
-    time += ((min < 10) ? ":0" : ":") + min;
-    time += ((sec < 10) ? ":0" : ":") + sec;
+let elTime = document.getElementById("time");
 
-    document.getElementById("time").innerHTML = time;
+function getTime(){
+    if(elTime !== null){
+        let currentTime = new Date();
+        let hour    = currentTime.getHours();
+        let min     = currentTime.getMinutes();
+        let sec     = currentTime.getSeconds();
+        let time    = ((hour < 10) ? "0" : "") + hour;
+        time += ((min < 10) ? ":0" : ":") + min;
+        time += ((sec < 10) ? ":0" : ":") + sec;
+
+        elTime.innerHTML = time;
+    }
 }
 /*
  * SEARCH BOX
@@ -115,5 +119,8 @@ document.getElementById("searchEngineList").addEventListener("mouseleave", funct
 
 populateSearchList();
 populateBookmarkList();
-getTime();  // initial get time to avoid 1s delay
-setInterval(getTime, 1000);
+
+if(elTime !== null){
+    getTime();  // initial get time to avoid 1s delay
+    setInterval(getTime, 1000);
+}
