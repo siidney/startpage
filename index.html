@@ -7,106 +7,73 @@
 
         <link rel="stylesheet" href="public/font-awesome-4.6.3/css/font-awesome.min.css">
         <link rel="stylesheet" href="public/css/main.css">
-        <link rel="stylesheet" href="public/css/themethree.css">
+        <link rel="stylesheet" href="public/css/themetwo.css">
     </head>
     <body>
-        <!-- an element with id="bookmarks" to display the user defined
-            bookmarks -->
-        <nav id="bookmarks" class="hide"></nav>
+        <nav class="text-center hide" id="bookmarks"></nav>
 
-        <header id="header" class="row bg-1 color-1">
-            <div class="row">
-                <div class="col text-center">
-                    <!-- an element with an id="time" for the clock -->
-                    <h1 id="time"></h1>
+        <header class="row w-100">
+            <!-- left panel -->
+            <div id="header-left" class="col w-50 left text-center background1">
+                <a href="#panel-top-right"><span class="icon fa fa-download"></span></a>
+            </div>
+            <div id="panel-top-left" class="panel w-50 background2">
+                <a href="#"><span class="fa fa-chevron-left"></span></a>
+            </div>
+            <!-- right panel -->
+            <div id="header-right" class="col w-50 right text-center background2">
+                <a href="#panel-top-left"><span class="icon fa fa-linux"></span></a>
+            </div>
+            <div id="panel-top-right" class="panel w-50 background1">
+                <a href="#"><span class="fa fa-chevron-right"></span></a>
+            </div>
+        </header>
+        <main class="row text-center">
+            <div id="main-col" class="col w-40">
+                <!-- an element with an id="time" for the clock -->
+                <p id="time"></p>
 
-                    <!-- the most important element in the startpage is the form.
-                        This performs the core functionality -->
-                    <form name="searchForm" class="searchForm style2" method="GET" action="javascript:runQuery()">
+                <!-- the most important element in the startpage is the form.
+                    This performs the core functionality -->
+                <form name="searchForm" class="searchForm style2" method="GET" action="javascript:runQuery()">
+                    <!-- an element with id="list-search" shows/hides the list of
+                        user generated search engines -->
                         <!-- The following search input should be used 'as is' to
                             ensure correct functionality -->
                         <input class="searchInput" type="text" name="q" placeholder="tag:query" autofocus>
-                        <!-- an element with id="list-search" shows/hides the list of
-                            user generated search engines -->
                         <span id="list-search" class="fa fa-chevron-down"></span>
-                        <!-- an ul with class="hide" is necessary for the hiding/showing of
-                            the user defined search engine list.
-                            In order for the list to be initially hidden this should be
-                            defined in your custom css file -->
-                        <ul id="searchEngineList" class="hide"></ul>
-                    </form>
-                </div>
-            </div>
-            <nav id="page-nav" class="row text-center">
-                <ul>
-                    <li>
-                        <a data-scroll href="#section-Tor" title="Torrents">
-                            <span class="icon1 fa fa-fw fa-download"></span>
-                        </a>
-                    </li><!-- remove inline-block gap
-                    --><li>
-                        <a data-scroll href="#section-Lin" title="Linux">
-                            <span class="icon1 fa fa-fw fa-linux"></span>
-                        </a>
-                    </li>
-                </ul>
-                <ul>
-                    <li>
-                        <a data-scroll href="#section-Res" title="Resources">
-                            <span class="icon1 fa fa-fw fa-code"></span>
-                        </a>
-                    </li><!-- remove inline-block gap
-                    --><li>
-                        <a data-scroll href="#section-Soc" title="Social Media">
-                            <span class="icon1 fa fa-fw fa-share-alt"></span>
-                        </a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="row text-center">
-                <div id="inspiration" class="col">
-                    <span>Some <strong>inspirational</strong> stuff about
-                        <em>life</em> to make you smile</span>
-                </div>
-            </div>
-        </header>
-        <main class="text-center">
-            <div id="section-Tor" class="row">
-                <div class="col">
-                    <a data-scroll href="#header" title="To Top">
-                        <span class="fa fa-fw fa-arrow-up"></span>
-                    </a>
-                </div>
-            </div>
-            <div id="section-Lin" class="row bg-2 color-1">
-                <div class="col">
-                    <a data-scroll href="#header" title="To Top">
-                        <span class="fa fa-fw fa-arrow-up"></span>
-                    </a>
-                </div>
-            </div>
-            <div id="section-Res" class="row">
-                <div class="col">
-                    <a data-scroll href="#header" title="To Top">
-                        <span class="fa fa-fw fa-arrow-up"></span>
-                    </a>
-                </div>
-            </div>
-            <div id="section-Soc" class="row bg-3 color-1">
-                <div class="col">
-                    <a data-scroll href="#header" title="To Top">
-                        <span class="fa fa-fw fa-arrow-up" title="To Top"></span>
-                    </a>
-                </div>
+                </form>
+
+                <!-- an ul with class="hide" is necessary for the hiding/showing of
+                    the user defined search engine list.
+                    In order for the list to be initially hidden this should be
+                    defined in your custom css file -->
+                <ul id="searchEngineList" class="hide"></ul>
             </div>
         </main>
+        <footer class="row w-100">
+            <!-- left panel -->
+            <div id="footer-left" class="col w-50 left text-center background3">
+                <a href="#panel-bottom-right"><span class="icon fa fa-code"></span></a>
+            </div>
+            <div id="panel-bottom-left" class="panel w-50 background4">
+                <a href="#"><span class="fa fa-chevron-left"></span></a>
+            </div>
+            <!-- right panel -->
+            <div id="footer-right" class="col w-50 right text-center background4">
+                <a href="#panel-bottom-left"><span class="icon fa fa-share-alt"></span></a>
+            </div>
+            <div id="panel-bottom-right" class="text-center panel w-50
+                background3">
+                <a href="#"><span class="fa fa-chevron-right"></span></a>
+            </div>
+        </footer>
         <!-- the following are required in this exact order -->
         <script type="text/javascript" src="public/js/lists.js"></script>
         <script type="text/javascript" src="public/js/protocols.js"></script>
         <script type="text/javascript" src="public/js/SearchQuery.js"></script>
         <script type="text/javascript" src="public/js/startpage.js"></script>
 
-        <script type="text/javascript" src="public/js/smooth-scroll.js"></script>
-        <script type="text/javascript" src="public/js/themethree.js"></script>
+        <script type="text/javascript" src="public/js/themetwo.js"></script>
     </body>
 </html>

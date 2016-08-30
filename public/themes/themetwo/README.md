@@ -13,6 +13,7 @@ move the position of the bookmarks to their corresponding panels.
 It uses the Microsoft colour palette as I'm no designer and couldn't be doing
 with spending the time necessary to find compatible colours.
 
+*FIXED*
 The tag list jumping up and down is a bit funky. Aside from that though this is
 pretty darn coolio.
 
