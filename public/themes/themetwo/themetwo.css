@@ -141,6 +141,8 @@ header{
     color:#000;
     padding:15px;
     position:absolute;
+    left:0;
+    right:0;
     font-size:1.1rem;
     list-style-type:none;
     background-color:#fff;

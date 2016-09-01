@@ -10,7 +10,7 @@
 /*
  * Add bookmarks menus to relevant panel
  */
-document.getElementById("panel-top-left").appendChild(document.getElementById("Lin"));
-document.getElementById("panel-top-right").appendChild(document.getElementById("Tor"));
-document.getElementById("panel-bottom-left").appendChild(document.getElementById("Soc"));
-document.getElementById("panel-bottom-right").appendChild(document.getElementById("Res"));
+document.getElementById("panel-top-left").appendChild(document.getElementById("bl-0"));
+document.getElementById("panel-top-right").appendChild(document.getElementById("bl-1"));
+document.getElementById("panel-bottom-left").appendChild(document.getElementById("bl-2"));
+document.getElementById("panel-bottom-right").appendChild(document.getElementById("bl-3"));

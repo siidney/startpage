@@ -78,7 +78,7 @@ function populateBookmarkList(){
 
         linode.appendChild(textnode);
         ulnode.appendChild(linode);
-        ulnode.setAttribute("id", bookmarkkeys[i].substr(0,3));
+        ulnode.setAttribute("id", "bl-" + i);
 
         for(let j=0; j<bookmarks[bookmarkkeys[i]].length; j++){
             linode = document.createElement("LI");

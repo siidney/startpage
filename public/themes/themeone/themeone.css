@@ -122,7 +122,7 @@ input[type="text"]:focus{
     background:rgba(0, 0, 0, 0.6);
 }
 /* individual lists styled by auto generated id */
-#Tor, #Lin, #Res, #Soc{
+#bl-0, #bl-1, #bl-2, #bl-3{
     border:1px solid #000;
     border-radius:15px;
     box-shadow:10px 10px;
@@ -138,7 +138,7 @@ input[type="text"]:focus{
     transform:translate(-50%, -50%);
 }
 /* individual list close modal buttons styled by auto generated id */
-#Tor-btn, #Lin-btn, #Res-btn, #Soc-btn{
+#bl-0-btn, #bl-1-btn, #bl-2-btn, #bl-3-btn{
     position:absolute;
     margin:5px 5px 0 0;
     padding:10px;
