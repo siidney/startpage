@@ -1,0 +1,39 @@
+/*
+ * THEMETHREE
+ *
+ * Stylesheet
+ *
+ * Basic Flat Design
+ *
+ * form styles courtesy of
+ *      http://callmenick.com/post/various-css-input-text-styles
+ *
+ * Background video source:
+ *      https://www.youtube.com/watch?v=0VttgxfqEtw
+ *
+ */
+/*
+ * GLOBAL STYLES
+ */
+video#bgvid{
+    position:fixed;
+    top:50%;
+    left:50%;
+    min-width:100%;
+    min-height:100%;
+    width:auto;
+    height:auto;
+    z-index:-100;
+    transform:translateX(-50%) translateY(-50%);
+    background:url(public/img/vids/poster-img.png) no-repeat;
+    background-size:cover;
+}
+/*
+ * FORM/CLOCK
+ */
+/*
+ * HEADER
+ */
+/*
+ * FOOTER
+ */
