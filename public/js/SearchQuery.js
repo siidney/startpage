@@ -4,22 +4,37 @@ class Search{
         this.SEPARATOR = ':';
 
         // check for empty string
-        // alert of ff about page
-        // redirect to addresses
         if(this.isQuery(searchForm.q.value)){
-            if(ffAboutPage.indexOf(document.searchForm.q.value) > -1){
+            // alert of ff about page
+            if(ffAboutPage.indexOf(document.searchForm.q.value.trim()) > -1){
                 window.alert("Firefox about pages can only be accessed directly from the url bar.");
                 return;
             }
-            if(this.isURL(document.searchForm.q.value)){
+            // redirect to url
+            if(this.isURL(document.searchForm.q.value.trim())){
                 return;
             }
 
             this.query = document.searchForm.q.value.split(this.SEPARATOR);
 
+            this.cleanQuery();
             this.processQuery();
         }
     }
+    // strip leading and trailing whitespace from first and last query part
+    // avoid stripping whitespace from query if query contains separators
+    cleanQuery(){
+        // first part is either bookmark shortcut or search term
+        this.query[0] = this.query[0].trim();
+
+        // second part needs leading whitespace trimming
+        // last part needs trailing whitespace trimming
+        if(this.query.length > 1){
+            this.query[1] = this.query[1].replace(/^\s+/g, '');
+            this.query[this.query.length -1] = this.query[this.query.length -1].replace(/\s+$/, '');
+        }
+    }
+    // Main query processing function
     processQuery(){
         if(!this.checkLocalHost(this.query)){
             // check if this.query is just a search term
@@ -98,7 +113,6 @@ class Search{
             window.location = url;
             return true;
         }
-
         return false;
     }
     // search with default engine
