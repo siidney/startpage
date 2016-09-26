@@ -5,6 +5,8 @@ A custom start page made primarily for Firefox.
 Everything is dynamically generated from the [lists.js](https://github.com/siidney/startpage/blob/master/public/js/lists.js) file. Unless of course you
 wish to change the theme/layout.
 
+---
+
 ## Themes
 
 Some premade themes are located [here](https://github.com/siidney/startpage/blob/master/public/themes/).
@@ -14,6 +16,8 @@ The theme/layout can easily be customised without affecting the core functionali
 simply using the [skel](https://github.com/siidney/startpage/blob/master/public/themes/skel) theme as a base.
 
 It is fully documented and quite easy to understand.
+
+---
 
 ## Details
 
@@ -64,6 +68,8 @@ query will be sent as you intended.
 
 [Functionality With Basic](https://vid.me/WBBO)
 
+---
+
 ## Known Issues
 
 **Search Bar**
@@ -72,3 +78,25 @@ The about config pages from firefox cannot be opened programmatically (security
 feature). So in order to access them you need to manually invoke the url bar as
 before. A warning is provided if an attempt is made to access any of the
 aforementioned.
+
+---
+
+## Coming Soon
+
+**Switching from JSON to IndexedDB**
+
+Remove the need to edit text files in order to customise bookmarks and search
+engines.
+
+Security limitations prevent Javascript from saving files to the local machine
+so an alternative approach to storing the necessary data is, well necessary.
+
+This will enable bookmarks and search engines to be edited/created etc from the
+startpage itself.
+
+**Firefox Addon**
+
+Once all features are fully implemented then this will become a Firefox addon to
+make ease of use...easier.
+
+1 click install, no needing a separate addon in order to use a custom startpage.
