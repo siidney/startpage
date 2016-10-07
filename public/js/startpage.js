@@ -39,7 +39,7 @@ function populateSearchList(){
         anode.appendChild(textnode);
         linode.appendChild(anode);
         list.appendChild(linode);
-    };
+    }
 }
 // show or hide search engine list from button
 document.getElementById("list-search").addEventListener("click", function(e){

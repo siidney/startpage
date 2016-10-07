@@ -65,7 +65,7 @@ class Search{
                         window.location = searchEngines[searchKeys[i]][0].url + encodeURIComponent(this.query[1]);
                         return;
                     }
-                };
+                }
                 // this.query[0] not correct tag
                 this.defaultSearch(this.query);
             }
@@ -84,7 +84,7 @@ class Search{
                     window.location = q;
                     return true;
                 }
-            };
+            }
         }
         if(q.indexOf(".") > -1){
             let pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol

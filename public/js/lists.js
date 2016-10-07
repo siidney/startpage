@@ -38,9 +38,6 @@ const searchEngines = {
     "The Pirate Bay": [
     {"tag": "tpb",      "url": "https://thepiratebay.se/search/", "default": "false"}
     ],
-    "KickAss Torrents": [
-    {"tag": "kat",      "url": "https://kat.cr/usearch/", "default": "false"}
-    ],
     "Cpp Reference": [
     {"tag": "cpp",      "url": "http://en.cppreference.com/mwiki/index.php?search=", "default": "false"}
     ],
