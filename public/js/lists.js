@@ -43,9 +43,6 @@ const searchEngines = {
     ],
     "WineHQ": [
     {"tag": "whq",      "url": "https://www.winehq.org/search?q=", "default": "false"}
-    ],
-    "Imgur": [
-    {"tag": "img",      "url": "https://imgur.com/search?q=", "default": "false"}
     ]
 };
 /*

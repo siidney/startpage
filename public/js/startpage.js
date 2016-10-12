@@ -2,6 +2,8 @@
  * TIME AND DATE
  */
 let elTime = document.getElementById("time");
+let searchEngineList = document.getElementById("searchEngineList");
+
 
 function getTime(){
     if(elTime !== null){
@@ -28,8 +30,6 @@ function runQuery(){
  */
 // create search engine list
 function populateSearchList(){
-    let list = document.getElementById("searchEngineList");
-
     // iterate over list and add names to list
     for(let i=0; i<searchKeys.length; i++){
         let linode = document.createElement("LI");
@@ -38,13 +38,11 @@ function populateSearchList(){
 
         anode.appendChild(textnode);
         linode.appendChild(anode);
-        list.appendChild(linode);
+        searchEngineList.appendChild(linode);
     }
 }
 // show or hide search engine list from button
 document.getElementById("list-search").addEventListener("click", function(e){
-    let searchEngineList = document.getElementById("searchEngineList");
-
     if(searchEngineList.classList.contains("hide")){
         showHideList("show");
     }else{
@@ -52,7 +50,6 @@ document.getElementById("list-search").addEventListener("click", function(e){
     }
 });
 function showHideList(action){
-    let searchEngineList = document.getElementById("searchEngineList");
     if(action == "show"){
         searchEngineList.classList.remove("hide");
         searchEngineList.classList.add("show");
@@ -96,19 +93,19 @@ function populateBookmarkList(){
 /*
  * EVENT LISTENERS
  */
-document.getElementById("searchEngineList").addEventListener("click", function(e){
+searchEngineList.addEventListener("click", function(e){
     if(e.target.tagName == "A"){
         document.searchForm.q.value = searchEngines[searchKeys[searchKeys.indexOf(e.target.innerHTML)]][0].tag + ":";
         document.searchForm.q.focus();
         showHideList("hide");
     }
 });
-document.getElementById("searchEngineList").addEventListener("mouseover", function(e){
+searchEngineList.addEventListener("mouseover", function(e){
     if(e.target.tagName == "A"){
         document.searchForm.q.value = searchEngines[searchKeys[searchKeys.indexOf(e.target.innerHTML)]][0].tag + ":";
     }
 });
-document.getElementById("searchEngineList").addEventListener("mouseleave", function(e){
+searchEngineList.addEventListener("mouseleave", function(e){
     if(document.searchForm.q == document.activeElement){
         return;
     }else{
@@ -117,7 +114,9 @@ document.getElementById("searchEngineList").addEventListener("mouseleave", funct
     }
 });
 
-populateSearchList();
+if(searchEngineList !== null){
+    populateSearchList();
+}
 populateBookmarkList();
 
 if(elTime !== null){
