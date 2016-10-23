@@ -4,7 +4,6 @@
 let elTime = document.getElementById("time");
 let searchEngineList = document.getElementById("searchEngineList");
 
-
 function getTime(){
     if(elTime !== null){
         let currentTime = new Date();
@@ -42,7 +41,7 @@ function populateSearchList(){
     }
 }
 // show or hide search engine list from button
-document.getElementById("list-search").addEventListener("click", function(e){
+document.getElementById("list-search").addEventListener("click", function(){
     if(searchEngineList.classList.contains("hide")){
         showHideList("show");
     }else{

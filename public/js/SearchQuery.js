@@ -1,7 +1,7 @@
 // Handles the search query
 class Search{
     constructor(){
-        this.SEPARATOR = ':';
+        this.SEPARATOR = ":";
 
         // check for empty string
         if(this.isQuery(searchForm.q.value)){
@@ -30,8 +30,8 @@ class Search{
         // second part needs leading whitespace trimming
         // last part needs trailing whitespace trimming
         if(this.query.length > 1){
-            this.query[1] = this.query[1].replace(/^\s+/g, '');
-            this.query[this.query.length -1] = this.query[this.query.length -1].replace(/\s+$/, '');
+            this.query[1] = this.query[1].replace(/^\s+/g, "");
+            this.query[this.query.length -1] = this.query[this.query.length -1].replace(/\s+$/, "");
         }
     }
     // Main query processing function
@@ -87,12 +87,12 @@ class Search{
             }
         }
         if(q.indexOf(".") > -1){
-            let pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
-                    '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|'+ // domain name
-                    '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
-                    '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
-                    '(\\?[;&a-z\\d%_.~+=-]*)?'+ // this.query string
-                    '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+            let pattern = new RegExp("^(https?:\\/\\/)?"+ // protocol
+                    "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|"+ // domain name
+                    "((\\d{1,3}\\.){3}\\d{1,3}))"+ // OR ip (v4) address
+                    "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*"+ // port and path
+                    "(\\?[;&a-z\\d%_.~+=-]*)?"+ // this.query string
+                    "(\\#[-a-z\\d_]*)?$","i"); // fragment locator
             if(pattern.test(q)){
                 window.location = protocols[0] + q;
                 return true;
